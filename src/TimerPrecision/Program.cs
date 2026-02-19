@@ -15,7 +15,7 @@ unsafe
 }
 
 Console.CursorVisible = false;
-for (;; Thread.Sleep(1000 / 60 / 2))
+for (;; Thread.Sleep(1000 / 30))
 {
     Console.SetCursorPosition(0, 0);
 
