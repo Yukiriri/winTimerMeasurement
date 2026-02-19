@@ -1,0 +1,13 @@
+QueryPerformanceFrequency
+QueryPerformanceCounter
+
+QueryInterruptTimePrecise
+QueryUnbiasedInterruptTimePrecise
+GetSystemTimePreciseAsFileTime
+
+QueryInterruptTime
+QueryUnbiasedInterruptTime
+GetSystemTimeAsFileTime
+
+GetTickCount64
+GetTickCount

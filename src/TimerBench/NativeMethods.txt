@@ -1,0 +1,8 @@
+QueryPerformanceFrequency
+QueryPerformanceCounter
+
+CreateWaitableTimer
+CreateWaitableTimerEx
+SetWaitableTimer
+WaitForSingleObject
+CloseHandle

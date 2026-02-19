@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerPrecision", "src\TimerPrecision\TimerPrecision.csproj", "{7D278639-F323-43F1-83A8-BA023C812381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerBench", "src\TimerBench\TimerBench.csproj", "{ADFA389F-E538-4B77-AC1C-F08D3E56B26A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerResolution", "src\TimerResolution\TimerResolution.csproj", "{4689256B-B7C2-4FEB-A3D1-E591863EEC14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D278639-F323-43F1-83A8-BA023C812381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D278639-F323-43F1-83A8-BA023C812381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D278639-F323-43F1-83A8-BA023C812381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D278639-F323-43F1-83A8-BA023C812381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADFA389F-E538-4B77-AC1C-F08D3E56B26A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADFA389F-E538-4B77-AC1C-F08D3E56B26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADFA389F-E538-4B77-AC1C-F08D3E56B26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADFA389F-E538-4B77-AC1C-F08D3E56B26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4689256B-B7C2-4FEB-A3D1-E591863EEC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4689256B-B7C2-4FEB-A3D1-E591863EEC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4689256B-B7C2-4FEB-A3D1-E591863EEC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4689256B-B7C2-4FEB-A3D1-E591863EEC14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

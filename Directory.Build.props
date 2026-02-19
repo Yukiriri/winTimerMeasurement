@@ -1,0 +1,18 @@
+﻿<Project>
+
+    <PropertyGroup Condition=" '$(MSBuildProjectExtension)' == '.csproj' ">
+        <BaseOutputPath            >..\..\bin\$(MSBuildProjectName)\</BaseOutputPath>
+        <BaseIntermediateOutputPath>..\..\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+        <ApplicationIcon Condition="Exists('Program.ico')">Program.ico</ApplicationIcon>
+        <ApplicationManifest Condition="Exists('Program.manifest')">Program.manifest</ApplicationManifest>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+        <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <Product>$(SolutionName)</Product>
+    </PropertyGroup>
+    
+</Project>

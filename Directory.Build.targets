@@ -1,0 +1,22 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PlatformTarget         Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' ">AnyCPU</PlatformTarget>
+        <DebugType              Condition=" '$(Configuration)' == 'Release' ">none</DebugType>
+        <OptimizationPreference Condition=" '$(Configuration)' == 'Release' ">Speed</OptimizationPreference>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference   Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' and
+                                        '$(Configuration)' == 'Release' and
+                                        '$(OutputType)' != 'Library' "
+                            Include="Costura.Fody" Version="6.0.0">
+            <PrivateAssets>All</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; compile</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    
+</Project>
