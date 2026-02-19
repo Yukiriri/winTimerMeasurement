@@ -1,0 +1,38 @@
+name: Auto Release
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+      branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # - name: Setup MSVC
+      #   uses: TheMrMilchmann/setup-msvc-dev@v3
+      #   with:
+      #     arch: x64
+      #     sdk: "10.0.26100.0"
+
+      - name: Dotnet build
+        run: dotnet build -c Release -p:AssemblyTitle="${{ github.repositoryUrl }}" -p:FileVersion="0.0.${{ github.run_number }}"
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          name: "build-${{ github.run_number }}"
+          tag: "build-${{ github.run_number }}"
+          artifacts: "./bin/*/Release/*/*.exe"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
