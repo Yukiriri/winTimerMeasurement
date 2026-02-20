@@ -5,8 +5,11 @@ using Microsoft.Win32;
 
 Console.OutputEncoding = Encoding.UTF8;
 
-using var hkey = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0");
-var cpuid = hkey?.GetValue("ProcessorNameString").ToString();
+string cpuid;
+{
+    using var hkey = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0");
+    cpuid = hkey?.GetValue("ProcessorNameString").ToString() ?? "";
+}
 
 long qp_freq = 0;
 unsafe
@@ -19,11 +22,10 @@ for (;; Thread.Sleep(1000 / 30))
 {
     Console.SetCursorPosition(0, 0);
 
-    Console.WriteLine(cpuid);
-    Console.WriteLine();
-    Console.WriteLine($"{qp_freq,9} hz : QueryPerformanceFrequency");
-    Console.WriteLine();
-    
+    Console.WriteLine(cpuid + "\n");
+
+    Console.WriteLine($"{qp_freq,9} hz : QueryPerformanceFrequency \n");
+
     unsafe
     {
         long qpc1 = 0, qpc2 = 0;
@@ -49,11 +51,9 @@ for (;; Thread.Sleep(1000 / 30))
         while (stp1 >= stp2)
             PInvoke.GetSystemTimePreciseAsFileTime((FILETIME*)&stp2);
         Console.WriteLine($"{(stp2 - stp1) * 100,9} ns : GetSystemTimePreciseAsFileTime");
-    }
-    Console.WriteLine();
 
-    unsafe
-    {
+        Console.WriteLine();
+
         ulong qit1 = 0, qit2 = 0;
         PInvoke.QueryInterruptTime(&qit1);
         while (qit1 >= qit2)
@@ -71,11 +71,9 @@ for (;; Thread.Sleep(1000 / 30))
         while (st1 >= st2)
             PInvoke.GetSystemTimeAsFileTime((FILETIME*)&st2);
         Console.WriteLine($"{(st2 - st1) * 100 / 1e+6,9:N3} ms : GetSystemTimeAsFileTime");
-    }
-    Console.WriteLine();
 
-    unsafe
-    {
+        Console.WriteLine();
+
         var gtc64_1 = PInvoke.GetTickCount64();
         var gtc64_2 = 0ul;
         while (gtc64_1 >= gtc64_2)
@@ -87,6 +85,7 @@ for (;; Thread.Sleep(1000 / 30))
         while (gtc_1 >= gtc_2)
             gtc_2 = PInvoke.GetTickCount();
         Console.WriteLine($"{gtc_2 - gtc_1,9} ms : GetTickCount");
+
+        Console.WriteLine();
     }
-    Console.WriteLine();
 }

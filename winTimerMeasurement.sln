@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerPrecision", "src\Timer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerBench", "src\TimerBench\TimerBench.csproj", "{ADFA389F-E538-4B77-AC1C-F08D3E56B26A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerResolution", "src\TimerResolution\TimerResolution.csproj", "{4689256B-B7C2-4FEB-A3D1-E591863EEC14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeginPeriod", "src\BeginPeriod\BeginPeriod.csproj", "{4689256B-B7C2-4FEB-A3D1-E591863EEC14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
