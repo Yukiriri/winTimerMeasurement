@@ -30,6 +30,15 @@ unsafe
                             actual  : {actual_res * 100 / 1e+6,7:N3} ms
                             
                        """);
+    
+    WinApi.NtQueryTimerResolution(&max_res, &min_res, &cur_res);
+    Console.WriteLine($"""
+                       NtQueryTimerResolution :
+                            min : {min_res * 100 / 1e+6,7:N3} ms 
+                            max : {max_res * 100 / 1e+6,7:N3} ms
+                            cur : {cur_res * 100 / 1e+6,7:N3} ms
+                            
+                       """);
 }
 Console.WriteLine("Press any key to restore and exit...");
 Console.ReadKey();

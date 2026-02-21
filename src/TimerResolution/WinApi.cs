@@ -9,5 +9,4 @@ public static class WinApi
 
     [DllImport("ntdll.dll")]
     public static extern unsafe int NtSetTimerResolution(uint DesiredTime, int SetResolution, uint* ActualTime);
-
 }
