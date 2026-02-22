@@ -2,11 +2,22 @@ using Windows.Win32;
 using Windows.Win32.Foundation;
 using Microsoft.Win32;
 
-var cpuid = "";
+var windows_display_ver = "";
+var windows_lcu_ver = "";
 {
-    using var h_key = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0");
+    using var h_key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
     if (h_key != null)
-        cpuid = h_key.GetValue("ProcessorNameString", "").ToString();
+    {
+        windows_display_ver += h_key.GetValue("DisplayVersion", "").ToString();
+        windows_lcu_ver += h_key.GetValue("LCUVer", "").ToString();
+    }
+}
+
+var is_global_timer_request = false;
+{
+    using var h_key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Session Manager\kernel");
+    if (h_key != null)
+        is_global_timer_request = (int)h_key.GetValue("GlobalTimerResolutionRequests", 0) != 0;
 }
 
 var qp_freq = 0ul;
@@ -22,7 +33,9 @@ for (;; Thread.Sleep(1))
 {
     Console.SetCursorPosition(0, 0);
 
-    Console.WriteLine(cpuid + "\n");
+    Console.WriteLine($"Windows {windows_display_ver} {windows_lcu_ver} \n");
+    
+    Console.WriteLine($"GlobalTimerResolutionRequests : {is_global_timer_request} \n");
     
     unsafe
     {

@@ -2,11 +2,15 @@ using System.Runtime.InteropServices.ComTypes;
 using Windows.Win32;
 using Microsoft.Win32;
 
-var cpuid = "";
+var windows_display_ver = "";
+var windows_lcu_ver = "";
 {
-    using var h_key = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0");
+    using var h_key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
     if (h_key != null)
-        cpuid = h_key.GetValue("ProcessorNameString", "").ToString();
+    {
+        windows_display_ver += h_key.GetValue("DisplayVersion", "").ToString();
+        windows_lcu_ver += h_key.GetValue("LCUVer", "").ToString();
+    }
 }
 
 var qp_freq = 0ul;
@@ -20,7 +24,7 @@ for (;; Thread.Sleep(1000 / 10))
 {
     Console.SetCursorPosition(0, 0);
 
-    Console.WriteLine(cpuid + "\n");
+    Console.WriteLine($"Windows {windows_display_ver} {windows_lcu_ver} \n");
 
     Console.WriteLine($"{qp_freq,9} hz : QueryPerformanceFrequency \n");
 
