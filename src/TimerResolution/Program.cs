@@ -1,17 +1,7 @@
-using Microsoft.Win32;
 using TimerResolution;
-
-var is_global_timer_request = false;
-{
-    using var h_key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Session Manager\kernel");
-    if (h_key != null)
-        is_global_timer_request = (int)h_key.GetValue("GlobalTimerResolutionRequests", 0) == 1;
-}
 
 unsafe
 {
-    Console.WriteLine($"GlobalTimerResolutionRequests : {is_global_timer_request} \n");
-    
     uint min_res = 0, max_res = 0, cur_res = 0;
     WinApi.NtQueryTimerResolution(&max_res, &min_res, &cur_res);
     Console.WriteLine($"""
@@ -34,8 +24,6 @@ unsafe
     WinApi.NtQueryTimerResolution(&max_res, &min_res, &cur_res);
     Console.WriteLine($"""
                        NtQueryTimerResolution :
-                            min : {min_res * 100 / 1e+6,7:N3} ms 
-                            max : {max_res * 100 / 1e+6,7:N3} ms
                             cur : {cur_res * 100 / 1e+6,7:N3} ms
                             
                        """);
