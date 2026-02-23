@@ -14,5 +14,5 @@
         <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
         <Product>$(SolutionName)</Product>
     </PropertyGroup>
-    
+
 </Project>

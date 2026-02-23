@@ -9,5 +9,5 @@
         <DebugType              Condition=" '$(Configuration)' == 'Release' ">none</DebugType>
         <OptimizationPreference Condition=" '$(Configuration)' == 'Release' ">Speed</OptimizationPreference>
     </PropertyGroup>
-    
+
 </Project>

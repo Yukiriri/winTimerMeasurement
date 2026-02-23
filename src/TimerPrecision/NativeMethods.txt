@@ -8,6 +8,3 @@ GetSystemTimePreciseAsFileTime
 QueryInterruptTime
 QueryUnbiasedInterruptTime
 GetSystemTimeAsFileTime
-
-GetTickCount64
-GetTickCount
