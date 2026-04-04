@@ -1,0 +1,7 @@
+/.idea/**
+/_dev/**
+/bin/**
+/obj/**
+/*.bat
+/*.ps1
+/*.sln.DotSettings.user

@@ -1,0 +1,13 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <PlatformTarget         Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' ">AnyCPU</PlatformTarget>
+        <DebugType              Condition=" '$(Configuration)' == 'Release' ">none</DebugType>
+        <OptimizationPreference Condition=" '$(Configuration)' == 'Release' ">Speed</OptimizationPreference>
+    </PropertyGroup>
+
+</Project>
