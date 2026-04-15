@@ -56,7 +56,7 @@ jobs:
           name: ${{ steps.generate.outputs.release_ver }}
           body_path: CHANGELOG.txt
           files: |
-            /bin/*/Release/*/*.exe
+            ./bin/*/Release/*/*.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
