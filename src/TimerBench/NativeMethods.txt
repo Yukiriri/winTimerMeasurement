@@ -1,0 +1,8 @@
+QueryPerformanceFrequency
+QueryPerformanceCounter
+
+QueryInterruptTimePrecise
+GetSystemTimePreciseAsFileTime
+
+QueryInterruptTime
+GetSystemTimeAsFileTime
