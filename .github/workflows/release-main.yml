@@ -32,11 +32,10 @@ jobs:
           [Console]::InputEncoding = [System.Text.Encoding]::UTF8
           [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
           $previous_tag = $(git describe --tags --abbrev=0 HEAD^ 2>$null)
-          if ($previous_tag -eq '') {
-            $release_body = $(git log --pretty=format:"- `%h`: %s")
-          } else {
-            $release_body = $(git log "$previous_tag..HEAD" --pretty=format:'- `%h`: %s')
+          if ($previous_tag -ne '') {
+            $previous_tag += '..HEAD'
           }
+          $release_body = $(git log "$previous_tag" --pretty=format:"- [`%h`]($env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/commit/%H): %s")
           Write-Output previous_tag=$previous_tag
           Write-Output release_body=$release_body
           echo $release_body > CHANGELOG.txt
