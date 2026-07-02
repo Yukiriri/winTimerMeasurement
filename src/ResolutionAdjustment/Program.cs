@@ -1,5 +1,5 @@
 using Microsoft.Win32;
-using TimerResolution;
+using ResolutionAdjustment;
 
 var windows_display_ver = "";
 var windows_lcu_ver     = "";

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace TimerResolution;
+namespace ResolutionAdjustment;
 
 public static class WinNtApi
 {

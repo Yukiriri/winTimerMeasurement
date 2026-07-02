@@ -5,7 +5,7 @@
         <BaseIntermediateOutputPath>..\..\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
         <ApplicationIcon Condition="Exists('Program.ico')">Program.ico</ApplicationIcon>
         <ApplicationManifest Condition="Exists('Program.manifest')">Program.manifest</ApplicationManifest>
-        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyCompanyAttribute>true</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
@@ -14,5 +14,5 @@
         <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
         <Product>$(SolutionName)</Product>
     </PropertyGroup>
-
+    
 </Project>

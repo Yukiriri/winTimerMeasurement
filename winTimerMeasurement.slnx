@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/ResolutionAdjustment/ResolutionAdjustment.csproj" />
+  <Project Path="src/ResolutionBench/ResolutionBench.csproj" />
+</Solution>

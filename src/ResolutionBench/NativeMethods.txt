@@ -6,3 +6,9 @@ GetSystemTimePreciseAsFileTime
 
 QueryInterruptTime
 GetSystemTimeAsFileTime
+
+CreateWaitableTimer
+CreateWaitableTimerEx
+SetWaitableTimer
+WaitForSingleObject
+CloseHandle
