@@ -25,7 +25,7 @@ csharp_int_align_switch_expressions = true
 csharp_int_align_comments = true
 
 csharp_align_multiline_parameter = true
-csharp_align_multiline_argument = true
+#csharp_align_multiline_argument = true
 csharp_align_multiline_calls_chain = true
 csharp_align_multiline_binary_expressions_chain = true
 csharp_align_linq_query = true

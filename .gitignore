@@ -1,7 +1,8 @@
-/.idea/**
-/_dev/**
-/bin/**
-/obj/**
-/*.bat
-/*.ps1
-/*.sln.DotSettings.user
+_dev/**
+.idea/**
+bin/**
+obj/**
+
+*.bat
+*.ps1
+*.sln.DotSettings.user
